@@ -1,6 +1,7 @@
 // Load the JSON data and perform a search if necessary.
 $.getJSON('/data/car-makes.json', function(data) {
 
+  // Check the query parameters.
   var urlParams = new URLSearchParams(window.location.search);
   var filteredCountry = null;
   if (urlParams.has('country')) {
@@ -8,25 +9,15 @@ $.getJSON('/data/car-makes.json', function(data) {
   }
 
   // Populate a dropdown.
-  var countries = {};
-  for (var i in data) {
-    countries[data[i].make_country] = data[i].make_country;
-  }
-  var label = '<label for="country-filter">Filter by country: </label>';
-  var dropdown = '<select id="country-filter" name="country"><option value="">-- All countries --</option>';
-  for (var country in countries) {
-    var selected = '';
-    if (country == filteredCountry) {
-      selected = 'selected';
-    }
-    dropdown += '<option ' + selected + ' value="' + country + '">' + country + '</option>';
-  }
-  $('.search-form').prepend('<div>' + label + dropdown + '</div>');
+  //outputDropdown(data, filteredCountry);
 
   // Perform the search.
   if (urlParams.has('q')) {
     performSearch(urlParams.get('q'), data, filteredCountry);
   }
+
+  // Attach AJAX functionality.
+  //attachAjaxFunctionality(data);
 });
 
 // Performs a search within an index of items.
@@ -70,7 +61,26 @@ var performSearch = function(search, index, filteredCountry) {
 
 // Formats a single result item.
 var formatResult = function(item) {
-  return '<li>' + item.make_display + ' (' + item.make_country + ')</li>';
+  return '<li>' + item.make_display + '</li>';
+}
+
+var outputDropdown = function(data, filteredCountry) {
+
+  var countries = {};
+  for (var i in data) {
+    countries[data[i].make_country] = data[i].make_country;
+  }
+
+  var label = '<label for="country-filter">Filter by country: </label>';
+  var dropdown = '<select id="country-filter" name="country"><option value="">-- All countries --</option>';
+  for (var country in countries) {
+    var selected = '';
+    if (country == filteredCountry) {
+      selected = 'selected';
+    }
+    dropdown += '<option ' + selected + ' value="' + country + '">' + country + '</option>';
+  }
+  $('.search-form').prepend('<div>' + label + dropdown + '</div>');
 }
 
 // Outputs the facet items.
@@ -103,4 +113,17 @@ var outputFacets = function(facets) {
     }
   }
   $('#facets').html('<ul>' + output + '</ul>');
+}
+
+// Attach AJAX functionality.
+var attachAjaxFunctionality = function(index) {
+  $('.search-form input[type="submit"]').click(function(e) {
+
+    var selectedCountry = $('#country-filter').val() || '';
+    var keywords = $('#search-input').val() || '';
+
+    performSearch(keywords, index, selectedCountry);
+
+    e.preventDefault();
+  });
 }
