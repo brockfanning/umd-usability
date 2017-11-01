@@ -71,7 +71,7 @@ var outputDropdown = function(data, filteredCountry) {
     countries[data[i].make_country] = data[i].make_country;
   }
 
-  var label = '<label for="country-filter">Filter by country: </label>';
+  var label = '<label>Filter by country: </label>';
   var dropdown = '<select id="country-filter" name="country"><option value="">-- All countries --</option>';
   for (var country in countries) {
     var selected = '';
