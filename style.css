@@ -7,17 +7,25 @@ html {
 }
 h1 {
   font-size: 3em;
+  line-height: 1.3em;
 }
 h2 {
   font-size: 2em;
+  line-height: 1.3em;
 }
 h3 {
   font-size: 1.5em;
+  line-height: 1.3em;
+}
+p {
+  max-width: 40rem;
 }
 p.lead-font {
   font-size: 1.4em;
   line-height: 1.4em;
+  max-width: 55rem;
 }
+
 
 /**
  * Branding
