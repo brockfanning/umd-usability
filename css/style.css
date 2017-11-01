@@ -18,12 +18,12 @@ h3 {
   line-height: 1.3em;
 }
 p {
-  max-width: 40rem;
+  max-width: 35rem;
 }
 p.lead-font {
   font-size: 1.4em;
   line-height: 1.4em;
-  max-width: 55rem;
+  max-width: 50rem;
 }
 
 
@@ -129,6 +129,41 @@ section {
   overflow: visible;
   height: auto;
   width: auto;
+}
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  display: block;
+}
+.image-right {
+  float: right;
+  max-width: 50%;
+  margin-left: 20px;
+}
+.image-left {
+  float: left;
+  max-width: 50%;
+  margin-right: 20px;
+}
+
+/**
+ * Search
+ */
+.search-form input, .search-form select  {
+  font-size: 1em;
+}
+.search-form div {
+  margin-bottom: 20px;
+}
+#facets {
+  float: left;
+  width: 250px;
+}
+#results {
+  margin-left: 250px;
 }
 
 /**

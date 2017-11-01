@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Search - Your application</title>
+
+  </head>
+
+  <body>
+
+    <a class="visually-hidden focusable" href="#content">Skip to content</a>
+
+    <img class="logo" src="/images/logo.png"/>
+
+    <ul class="nav-menu">
+      <li>
+        <a href="/">Landing page</a>
+      </li>
+      <li>
+        <a href="/content.html">Content</a>
+      </li>
+      <li>
+        <a href="/submission.html">Submission</a>
+      </li>
+      <li>
+        <a href="/search.html">Search</a>
+      </li>
+    </ul>
+
+    <h2>Search</h2>
+
+    <div id="content"></div>
+
+    <form class="search-form" action="/search.html">
+      <label for="search-input">Enter search terms here: </label>
+      <input id="search-input" name="q" type="text" />
+      <input type="submit" value="Search" />
+    </form>
+    <div id="facets"></div>
+    <div id="results"></div>
+
+    <div class="clear-fix"></div>
+
+    <script src="/javascript/jquery-3.2.1.min.js"></script>
+    <script src="/javascript/search.js"></script>
+  </body>
+</html>
