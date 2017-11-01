@@ -9,7 +9,7 @@ $.getJSON('/data/car-makes.json', function(data) {
   }
 
   // Populate a dropdown.
-  //outputDropdown(data, filteredCountry);
+  outputDropdown(data, filteredCountry);
 
   // Perform the search.
   if (urlParams.has('q')) {
@@ -17,7 +17,7 @@ $.getJSON('/data/car-makes.json', function(data) {
   }
 
   // Attach AJAX functionality.
-  //attachAjaxFunctionality(data);
+  attachAjaxFunctionality(data);
 });
 
 // Performs a search within an index of items.
@@ -44,7 +44,7 @@ var performSearch = function(search, index, filteredCountry) {
   }
 
   // Output the facets.
-  outputFacets(facets);
+  //outputFacets(facets);
 
   var html = '';
   for (var i in results) {

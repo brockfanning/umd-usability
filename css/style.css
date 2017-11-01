@@ -17,15 +17,6 @@ h3 {
   font-size: 1.5em;
   line-height: 1.3em;
 }
-p {
-  max-width: 35rem;
-}
-p.lead-font {
-  font-size: 1.4em;
-  line-height: 1.4em;
-  max-width: 50rem;
-}
-
 
 /**
  * Branding
@@ -37,8 +28,13 @@ p.lead-font {
 }
 .banner {
   background-color: #ccc;
-  padding: 40px;
   margin-bottom: 40px;
+}
+.banner a {
+  padding: 40px;
+  color: black;
+  text-decoration: none;
+  display: block;
 }
 
 /**
@@ -165,26 +161,10 @@ img {
 }
 #results {
   margin-top: 30px;
-  margin-left: 250px;
 }
 #results li {
   display: inline-block;
   padding: 10px;
   margin: 0 10px 10px 0;
   background-color: #ddd;
-}
-
-/**
- * Desktop styles.
- */
-@media (min-width: 800px) {
-  .half {
-    width: 45%;
-    float: left;
-    margin-right: 5%;
-  }
-  .two-column {
-    column-count: 2;
-    column-gap: 3em;
-  }
 }
